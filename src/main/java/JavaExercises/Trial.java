@@ -1,4 +1,5 @@
 package JavaExercises;
+// aadded a comment for testing the git
 // This just prints the reversed string. But is not stored anywhere in a variable to be used later.
 public class Trial {
 	public static void main(String[] args) {
