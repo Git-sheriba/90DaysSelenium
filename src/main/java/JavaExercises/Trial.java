@@ -25,3 +25,7 @@ public class Trial {
 		
 	}
 }
+/*Write a java program to find the count the characters in the given string
+String str = "Karma is powerful than God"
+{K=1, a=3, r=2, m=1,  =4, i=1, s=1, p=1, o=2, w=1, e=1, f=1, u=1, l=1, t=1, h=1, n=1, G=1, d=1}*/
+
