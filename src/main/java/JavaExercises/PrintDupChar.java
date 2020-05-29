@@ -57,7 +57,6 @@ public class PrintDupChar {
 				dupSet.add(charArray[i]);
 				//System.out.println(charArray[i]);
 			}
-				
 		}
 		String stringDup = dupSet.toString();
 		System.out.println(stringDup);
