@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Day1_Myntra {
 
@@ -17,7 +20,6 @@ public class Day1_Myntra {
 		
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver_ver81.exe");
 		ChromeDriver driver = new ChromeDriver(option);
-		
 		
 		// 1) Open https://www.myntra.com/
 		driver.get("https://www.myntra.com/");

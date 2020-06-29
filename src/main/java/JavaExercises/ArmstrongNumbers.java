@@ -15,9 +15,7 @@ public class ArmstrongNumbers {
 		int rem = 0;
 		int sum = 0;
 		
-
-		
-		for (int i = 1; i <= 2000; i++) {
+		for (int i = 1; i <= 10000; i++) {
 			int originalNumber = i;
 			int digits = 0;
 	        // number of digits calculation

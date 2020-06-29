@@ -1,6 +1,8 @@
 package MyCodes;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -22,7 +24,7 @@ public class Day12_CarWale {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 //1) Go to https://www.carwale.com/
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver_ver81.exe");
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver_ver83.exe");
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 		
 		ChromeOptions options = new ChromeOptions();
@@ -83,7 +85,7 @@ public class Day12_CarWale {
       
       WebElement webFuel = driver.findElementByXPath("//div[@name='fuel']/h3");
    //  js.executeScript("arguments[0].scrollIntoView();", webFuel);
-     js.executeScript("arguments[0].click()", webFuel);
+      js.executeScript("arguments[0].click()", webFuel);
       
       WebElement webPetrol = driver.findElementByXPath("(//span[text()='Petrol'])[1]");
       js.executeScript("arguments[0].click()",webPetrol);
@@ -106,11 +108,25 @@ public class Day12_CarWale {
     	  int KmofCar_int = Integer.parseInt(value);
     	  System.out.println("Km of the Cars:"+KmofCar_int);
 	}
-     // Cole
 //10) Add the least KM ran car to Wishlist 
+      driver.findElementByXPath("(//span[@class='shortlist-icon--inactive shortlist'])[1]").click();
+      
 //11) Go to Wishlist and Click on More Details 
+      driver.findElementByXPath("//li[@data-action='ShortList&CompareWindow_Click']/span").click();
+      driver.findElementByLinkText("More details »").click();
+      
 //12) Print all the details under Overview in the same way as displayed 
+      Set<String> winSet = driver.getWindowHandles();
+      List<String> winList = new ArrayList<String>(winSet);
+      driver.switchTo().window(winList.get(1));
+      System.out.println(winList.get(1));
+      List<WebElement> overviewDetails = driver.findElementsByXPath("//div[@class='overview-list padding-bottom10']//div");
+      for (WebElement webElement : overviewDetails) {
+    	  System.out.print(webElement.getText()+ "\t");
+    	  System.out.println("\n");
+	  }
+      
 //13) Close the browser.
+      driver.close();
 	}
-
 }
